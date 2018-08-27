@@ -18,7 +18,6 @@ app = Flask(__name__)
 #@app.route('/')
 @app.route('/', methods = ['GET', 'POST'])
 def index():
-
     try:
         try:
             file = request.files['file']
@@ -118,9 +117,10 @@ def index():
                     bronze_cores=bronze_cores.to_html(), bronze_FutureCores=bronze_FutureCores.to_html(),
                     bronze_supporter=bronze_supporter.to_html())
    # #print(r)
-        return r
     except Exception as e:
         r = render_template('index.html', title='Home')
+
+        return r
 
 
 
