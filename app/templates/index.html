@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Matriz de Prioridades</title>
+    </head>
+    <form action = "/" method = "POST"
+          enctype = "multipart/form-data">
+        <input type = "file" name = "file" />
+        <input type = "submit"/>
+    </form>
+    <body align=center>
+    <h1> Matriz de Prioridades <br> Budget Setting 2019</h1>
+    <br><br>
+    <table border = "1" align=center>
+         <thead>
+         <tr>
+             <th>Matriz Prioridades</th>
+             <th bgcolor=A4D2F5>Core</th>
+             <th bgcolor=A4D2F5>Future Core</th>
+             <th bgcolor=A4D2F5>Supporter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td bgcolor=E5EC0D>Gold</td>
+            <td bgcolor=3FE51D>{{ gold_cores|safe }}</td>
+            <td bgcolor=3FE51D>{{ gold_FutureCores|safe }}</td>
+            <td bgcolor=979793>{{ gold_supporter|safe }}</td>
+        </tr>
+        <tr>
+            <td bgcolor=979793>Silver</td>
+            <td bgcolor=47A833>{{ silver_cores|safe }}</td>
+            <td bgcolor=66CC66>{{ silver_FutureCores|safe }}</td>
+            <td bgcolor=8CD58C>{{ silver_supporter|safe }}</td>
+        </tr>
+        <tr>
+            <td bgcolor=E68F1D>Bronze</td>
+            <td bgcolor=A4F5A4>{{ bronze_cores|safe }}</td>
+            <td bgcolor=A4F5A4>{{ bronze_FutureCores|safe }}</td>
+            <td bgcolor=A4F5A4>{{ bronze_supporter|safe }}</td>
+        </tr>
+    </tbody>
+    </body> 
+</html>
