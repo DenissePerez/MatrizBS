@@ -30,30 +30,30 @@ def index():
         activity_type = base['Activity Type']
         activity_name = base['Activity Name']
         portfolio = base['Portfolio']
-        base['MEDIA COST (000\'S)'] = round(base['MEDIA COST (000\'S)'], 2)
+        base['MEDIA COST'] = round(base['MEDIA COST'], 2)
 
         # Gold Activities (First Matrice's row)
 
         GC = base.loc[(activity_type == 'GOLD') & (portfolio == 'Core') & (activity_name != 'AON') & (
                     activity_name != 'E-Commerce')]
         gold_cores = pd.DataFrame
-        gold_cores = {'Activity': GC['Key'], 'iTO': GC['iTO Euros (000\'S)'], 'Media Cost': GC['MEDIA COST (000\'S)']}
+        gold_cores = {'Activity': GC['Key'], 'Media Cost': GC['MEDIA COST'], 'iTO': GC['iTO Euros']}
         gold_cores = (pd.DataFrame(gold_cores)).reset_index()
         gold_cores.index = gold_cores.index + 1
         gold_cores = gold_cores.drop(gold_cores.columns[0], axis=1)
 
         GFC = base.loc[(activity_type == 'GOLD') & (portfolio == 'Future Core')]
         gold_FutureCores = pd.DataFrame
-        gold_FutureCores = {'Activity': GFC['Key'], 'iTO': GFC['iTO Euros (000\'S)'],
-                            'Media Cost': GFC['MEDIA COST (000\'S)']}
+        gold_FutureCores = {'Activity': GFC['Key'], 'Media Cost': GFC['MEDIA COST'],
+                            'iTO': GFC['iTO Euros']}
         gold_FutureCores = (pd.DataFrame(gold_FutureCores)).reset_index()
         gold_FutureCores.index = gold_FutureCores.index + 1
         gold_FutureCores = gold_FutureCores.drop(gold_FutureCores.columns[0], axis=1)
 
-        GS = base.loc[(activity_type == 'GOLD') & (portfolio == 'Supporter')]
+        GS = base.loc[(activity_type == 'GOLD') & (portfolio == 'Supporters')]
         gold_supporter = pd.DataFrame
-        gold_supporter = {'Activity': GS['Key'], 'iTO': GS['iTO Euros (000\'S)'],
-                          'Media Cost': GS['MEDIA COST (000\'S)']}
+        gold_supporter = {'Activity': GS['Key'], 'Media Cost': GS['MEDIA COST'],
+                          'iTO': GS['iTO Euros']}
         gold_supporter = (pd.DataFrame(gold_supporter)).reset_index()
         gold_supporter.index = gold_supporter.index + 1
         gold_supporter = gold_supporter.drop(gold_supporter.columns[0], axis=1)
@@ -63,23 +63,23 @@ def index():
         SC = base.loc[(activity_type == 'SILVER') & (portfolio == 'Core') & (activity_name != 'AON') & (
                     activity_name != 'E-Commerce')]
         silver_cores = pd.DataFrame
-        silver_cores = {'Activity': SC['Key'], 'iTO': SC['iTO Euros (000\'S)'], 'Media Cost': SC['MEDIA COST (000\'S)']}
+        silver_cores = {'Activity': SC['Key'], 'Media Cost': SC['MEDIA COST'], 'iTO': SC['iTO Euros']}
         silver_cores = (pd.DataFrame(silver_cores)).reset_index()
         silver_cores.index = silver_cores.index + 1
         silver_cores = silver_cores.drop(silver_cores.columns[0], axis=1)
 
         SFC = base.loc[(activity_type == 'SILVER') & (portfolio == 'Future Core')]
         silver_FutureCores = pd.DataFrame
-        silver_FutureCores = {'Activity': SFC['Key'], 'iTO': SFC['iTO Euros (000\'S)'],
-                              'Media Cost': SFC['MEDIA COST (000\'S)']}
+        silver_FutureCores = {'Activity': SFC['Key'], 'Media Cost': SFC['MEDIA COST'],
+                              'iTO': SFC['iTO Euros']}
         silver_FutureCores = (pd.DataFrame(silver_FutureCores)).reset_index()
         silver_FutureCores.index = silver_FutureCores.index + 1
         silver_FutureCores = silver_FutureCores.drop(silver_FutureCores.columns[0], axis=1)
 
-        SS = base.loc[(activity_type == 'SILVER') & (portfolio == 'Supporter')]
+        SS = base.loc[(activity_type == 'SILVER') & (portfolio == 'Supporters')]
         silver_supporter = pd.DataFrame
-        silver_supporter = {'Activity': SS['Key'], 'iTO': SS['iTO Euros (000\'S)'],
-                            'Media Cost': SS['MEDIA COST (000\'S)']}
+        silver_supporter = {'Activity': SS['Key'], 'Media Cost': SS['MEDIA COST'],
+                            'iTO': SS['iTO Euros']}
         silver_supporter = (pd.DataFrame(silver_supporter)).reset_index()
         silver_supporter.index = silver_supporter.index + 1
         silver_supporter = silver_supporter.drop(silver_supporter.columns[0], axis=1)
@@ -89,7 +89,7 @@ def index():
         BC = base.loc[(activity_type == 'BRONZE') & (portfolio == 'Core') & (activity_name != 'AON') & (
                     activity_name != 'E-Commerce')]
         bronze_cores = pd.DataFrame
-        bronze_cores = {'Activity': BC['Key'], 'iTO': BC['iTO Euros (000\'S)'], 'Media Cost': BC['MEDIA COST (000\'S)']}
+        bronze_cores = {'Activity': BC['Key'], 'Media Cost': BC['MEDIA COST'], 'iTO': BC['iTO Euros']}
         bronze_cores = (pd.DataFrame(bronze_cores)).reset_index()
         bronze_cores.index = bronze_cores.index + 1
         bronze_cores = bronze_cores.drop(bronze_cores.columns[0], axis=1)
@@ -97,16 +97,16 @@ def index():
         BFC = base.loc[(activity_type == 'BRONZE') & (portfolio == 'Future Core') & (activity_name != 'AON') & (
                     activity_name != 'E-Commerce')]
         bronze_FutureCores = pd.DataFrame
-        bronze_FutureCores = {'Activity': BFC['Key'], 'iTO': BFC['iTO Euros (000\'S)'],
-                              'Media Cost': BFC['MEDIA COST (000\'S)']}
+        bronze_FutureCores = {'Activity': BFC['Key'], 'Media Cost': BFC['MEDIA COST'],
+                              'iTO': BFC['iTO Euros']}
         bronze_FutureCores = (pd.DataFrame(bronze_FutureCores)).reset_index()
         bronze_FutureCores.index = bronze_FutureCores.index + 1
         bronze_FutureCores = bronze_FutureCores.drop(bronze_FutureCores.columns[0], axis=1)
 
-        BS = base.loc[(activity_type == 'BRONZE') & (portfolio == 'Supporter')]
+        BS = base.loc[(activity_type == 'BRONZE') & (portfolio == 'Supporters')]
         bronze_supporter = pd.DataFrame
-        bronze_supporter = {'Activity': BS['Key'], 'iTO': BS['iTO Euros (000\'S)'],
-                            'Media Cost': BS['MEDIA COST (000\'S)']}
+        bronze_supporter = {'Activity': BS['Key'], 'Media Cost': BS['MEDIA COST'],
+                            'iTO': BS['iTO Euros']}
         bronze_supporter = (pd.DataFrame(bronze_supporter)).reset_index()
         bronze_supporter.index = bronze_supporter.index + 1
         bronze_supporter = bronze_supporter.drop(bronze_supporter.columns[0], axis=1)
