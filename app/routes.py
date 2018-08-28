@@ -120,13 +120,7 @@ def index():
     except Exception as e:
         r = render_template('index.html', title='Home')
 
-        return r
-
-
-
-
-
-
+    return r
 
 if __name__ == "__main__":
     app.run(debug=True)
